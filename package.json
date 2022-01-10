@@ -1,0 +1,27 @@
+{
+  "name": "sorry-cypress-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cy:open": "cypress open --browser chrome",
+    "clean:install": "rm -rf node_modules && npm cache clean --force && npm install",
+    "cy:parallel": "CYPRESS_API_URL='http://localhost:1234/' cy2 run --browser chrome  --record --key XXX --parallel --ci-build-id 'Global run'",
+    "cy:parallel:group_1": "CYPRESS_API_URL='http://192.168.1.92:1234/' cy2 run --spec 'cypress/integration/group_1.spec.js' --browser chrome --group spec/1  --record --key key1 --parallel --ci-build-id Group_1_`date +%s`",
+    "cy:parallel:group_2": "CYPRESS_API_URL='http://192.168.1.92:1234/' cy2 run --spec 'cypress/integration/group_2.spec.js' --browser chrome --group spec/2  --record --key key2 --parallel --ci-build-id Group_2_`date +%s`",
+    "cy:parallel:group_3": "CYPRESS_API_URL='http://192.168.1.92:1234/' cy2 run --spec 'cypress/integration/group_3.spec.js' --browser chrome --group spec/3  --record --key key3 --parallel --ci-build-id Group_3_`date +%s`",
+    "cy:parallel:group_4": "CYPRESS_API_URL='http://192.168.1.92:1234/' cy2 run --spec 'cypress/integration/group_4.spec.js' --browser chrome --group spec/4  --record --key key4 --parallel --ci-build-id Group_4_`date +%s`",
+    "cy:parallel:group_5": "CYPRESS_API_URL='http://192.168.1.92:1234/' cy2 run --spec 'cypress/integration/group_5.spec.js' --browser chrome --group spec/5  --record --key key5 --parallel --ci-build-id Group_5_`date +%s`",
+    "cy:parallel__": "CYPRESS_API_URL='http://localhost:1234/' cy2 open --browser chrome"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@testing-library/cypress": "^8.0.2",
+    "cypress": "^9.2.0"
+  },
+  "dependencies": {
+    "cy2": "^1.3.0"
+  }
+}
