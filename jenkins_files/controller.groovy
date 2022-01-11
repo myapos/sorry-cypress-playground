@@ -64,6 +64,13 @@ pipeline {
                 }
             }
         }
+
+        stage('Kill docker') {
+            steps {
+                sh 'docker kill $(docker ps -q)'
+            }
+        }
+
         stage('End') {
             steps {
                 echo 'Bye'
