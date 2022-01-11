@@ -1,4 +1,6 @@
 {
   "projectId": "sorry cypress demo",
-  "video": false
+  "video": false,
+  "requestTimeout": 120000,
+  "pageLoadTimeout": 45000
 }

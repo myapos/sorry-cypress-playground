@@ -18,9 +18,15 @@ pipeline {
             }
         }
 
-        stage('Group 5 - master') {
+        stage('Install dependencies - master') {
             steps {
-                sh 'npm run cy:parallel:group_5'
+                sh 'npm install'
+            }
+        }
+
+        stage('Verify cypress master') {
+            steps {
+                sh 'npm run cy:verify'
             }
         }
     }

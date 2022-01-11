@@ -18,9 +18,15 @@ pipeline {
             }
         }
 
-        stage('Group 4 - myros-game') {
+        stage('Install dependencies - myros-game') {
             steps {
-                sh 'npm run cy:parallel:group_4'
+                sh 'npm install'
+            }
+        }
+
+        stage('Verify cypress myros-game') {
+            steps {
+                sh 'npm run cy:verify'
             }
         }
     }

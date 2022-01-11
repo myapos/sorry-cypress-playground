@@ -19,7 +19,19 @@ pipeline {
             }
         }
 
-        stage('Run tests of group 1 on two node') {
+        stage('Verify_cypress_master') {
+            steps {
+                build job: 'Verify_cypress_master', parameters: []
+            }
+        }
+
+        stage('Verify_cypress_myros_game') {
+            steps {
+                build job: 'Verify_cypress_myros_game', parameters: []
+            }
+        }
+
+        stage('Run parallel tests on nodes') {
             parallel {
                 stage('Group 1 - master') {
                     steps {
