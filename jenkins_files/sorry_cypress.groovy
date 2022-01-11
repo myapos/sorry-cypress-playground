@@ -31,16 +31,6 @@ pipeline {
             }
         }
 
-        stage('Kill previous sorry cypress dashboard') {
-            agent {
-                label 'master'
-            }
-
-            steps {
-                sh 'docker kill $(docker ps -q)'
-            }
-        }
-
         stage('Run minio - master') {
             agent {
                 label 'master'
